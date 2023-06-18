@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Sai' Rasoi</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="icon" href = "https://www.kindpng.com/picc/m/218-2183786_shirdi-sai-baba-sculpture-hd-png-download.png"
+    type="image/x-icon">
+   
+    <style>
+        body {
+        background-image: url('background\ image\ .jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        }
+        h1{text-align: center;}
+        h1{font-family: 'Times New Roman', Times, serif;}
+        h1{font: size 1100px; ;}
+        h1{color: rgb(71, 41, 57);}
+        p{text-align: center;}
+        div{text-align: center;}
+        .parent{
+            width: 200px;
+            height: 350px;
+            background-color: rgb(2, 1, 46);
+            border-radius: 12px;
+            display: inline-table;
+            margin: 20px;
+            /*position:absolute;
+            top:25%;
+            left:25%
+            transform:translate(-25%,-25%);*/
+
+        }
+        .child-header
+        {
+            background-color: rgb(87, 104, 119);
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 12px;
+            padding:10px 0;
+        }
+        .item-img{
+            width:200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .specialbut{
+            border: none;
+            background-color: transparent;
+            font-size: 18px;
+        }
+        .addbut
+        {
+         color:greenyellow;   
+        }
+        .subbut
+        {
+            color:tomato;
+        }
+        input{
+            width: 25%;
+            border-radius: 5px;
+        }
+        .cart-container
+        {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .cartbut
+        {
+            padding: 8px;
+            background-color: rgb(241, 16, 16);
+            border: none;
+            border-radius: 5px;
+
+        }
+      /* Callout box - fixed position at the bottom of the page */
+.callout {
+  position: fixed;
+  bottom: 45px;
+  right: 30px;
+  margin-left: 30px;
+  max-width: 400px;
+}
+
+/* Callout header */
+.callout-header {
+  padding: 35px 25px;
+  background: rgb(255, 180, 19);
+  font-size: 40px;
+  color: white;
+}
+
+/* Callout container/body */
+.callout-container {
+  padding: 25px;
+  background-color: #ccc;
+  color: black
+}
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Change color on mouse-over */
+.closebtn:hover {
+  color: lightgrey;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(81, 94, 47);
+  color: white;
+  text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <h1 id='head'style="font-family: fantasy; background-color: deeppink;font-size 60px; ">Sai's Rasoi</h1>
+    <p style="background-color:white;text-align:center;">A best in class experience for your sweet tooth</p>
+    <div class="callout">
+        <div class="callout-header">Welcome to Sai's Rasoi</div>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <div class="callout-container">
+          <p style="font-size: 40px;">Great that you have chose the right destiny for crispy snack and sweetie sweets </p>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Rate our service to make a betterment </p>
+      </div>
+      
+    <div id="root">
+
+    </div>
+    
+    <script>
+          
+        count=0
+
+          qty_ref=document.getElementById('qty_ip')
+        function increment_func()
+        {
+            count++;
+            qty_ref.value=count
+        }
+        function decrement_func()
+        {
+            count--;
+            qty_ref.value=count
+        
+        }
+        
+        qty_ref=document.getElementById("qty_ip")
+        title=['Gulab jamoon','Rasagulla','stuffed jamoon','jamoon cake','gulabi icecream','samosa','bhel puri','channa masala','pav bhaji','veg sandwhich']
+
+         imgs=['jamoon.jpg','rasagulla.jpg','stuffed jamoon.jpg','jamoon cake.jpg','gulabi icecream.jpg','samosa.jpg','bhel puri.jpg','channa masala.jpg','pav bhaji.jpg','veg sandwhich.jpg']
+        content=''
+        for(i=0;i< title.length;i++)
+        {
+            content=content+`<div class="parent">
+                 <div class="child-header">${title[i]}</div>
+                 <div style='width:100%;text-align:center'>
+                    <img class="item-img" src="${imgs[i]}">
+                 </div>
+
+                  <div style="text-align: center;">
+                     <button onclick="increment_func()" class="specialbut addbut">+</button>
+                     <input id="qty_ip" placeholder="Qty">
+                     <button onclick="decrement_func()"class="specialbut subbut">-</button>
+                 </div>
+        
+                  <div class="cart-container">
+                     <button class="cartbut">Add to cart</button>
+              
+                 </div>
+              </div>`
+        }
+        document.getElementById('root').innerHTML=content
+
+    </script>
+
+</body>
+</html>
